@@ -6,10 +6,12 @@
 .floor__heading {
   -ms-grid-row: 1;
   background-color: #f6f7f9;
-  height: 45px;
+  height: 37px;
   position: relative;
 }
-
+.floors {
+  background-color: #f6f7f9;
+}
 .floor__label {
   position: absolute;
   bottom: 8px;
@@ -23,33 +25,20 @@
   text-transform: uppercase;
 }
 
-// .room__meta-wrapper {
-//   display: flex;
-//   height: 100%;
-//   align-items: center;
-//   margin-left: 16px;
-// }
-// .room__name {
-//   font-size: 15px;
-//   line-height: 1.133333;
-// }
-// .room__capacity {
-//   font-size: 13px;
-//   line-height: 1.30769;
-// }
-
-// .room__timeline {
-//   display: inline-block;
-//   font-size: 0;
-// }
-// .room-timeline__list {
-//   height: 100%;
-//   // font-size: 0;
-//   white-space: nowrap;
-// }
-// .timeline__item {
-//   display: inline-block;
-// }
-// .timeline__item--busy {
-//   background-color: #d5dfe9;
-// }
+.floors__footer {
+  height: 37px;
+}
+.floors__footer-left {
+  -ms-grid-column: 1;
+  // -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  border-right: 1px solid #e9ecef;
+  background-color: #fff;
+}
+.floors__footer-right {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 902;
+  grid-column: 2/904;
+  // border-ga: 1px solid red;
+  background-color: #f6f7f9;
+}

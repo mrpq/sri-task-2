@@ -1,8 +1,13 @@
 .diagram-grid {
   display: -ms-grid;
   display: grid;
-  /* width: 1237px; */
-  width: 100%;
+  width: 1237px;
   -ms-grid-columns: 180px 54px (1fr)[900] 13px;
   grid-template-columns: 180px 54px repeat(900, 1fr) 13px;
+}
+
+@media (min-width: 960px) {
+  .diagram-grid {
+    width: 100%;
+  }
 }

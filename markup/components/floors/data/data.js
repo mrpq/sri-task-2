@@ -5,8 +5,9 @@ let data = {
             rooms: [
                 {
                     name: 'Ржавый Фред',
-                    capacity: '3—6 человек'
+                    capacity: '3—6 человек',
                     // meetings: meetingGenerator.generateMeetings()
+                    full: true
                 },
                 {
                     name: 'Прачечная',
@@ -35,7 +36,8 @@ let data = {
                 },
                 {
                     name: 'Мариванна',
-                    capacity: '3—6 человек'
+                    capacity: '3—6 человек',
+                    full: true
                     // meetings: meetingGenerator.generateMeetings()
                 },
                 {

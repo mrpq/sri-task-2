@@ -8,12 +8,14 @@
 // }
 
 const diagram = document.querySelector('.diagram');
+const floorsBlock = document.querySelector('.floors');
+const floorsBlockHeight = parseInt(
+    window.getComputedStyle(floorsBlock).height,
+    10
+);
 const hoursBarStyle = document.createElement('style');
-hoursBarStyle.innerHTML = `.hours__bar {height: ${
-    window.getComputedStyle(diagram).height
-};} .diagram__curr-time-label::after { height: ${
-    window.getComputedStyle(diagram).height
-};}`;
+hoursBarStyle.innerHTML = `.hours__bar {height: ${floorsBlockHeight}px;} .diagram__curr-time-label::after { height: ${floorsBlockHeight +
+    8}px;}`;
 document.body.appendChild(hoursBarStyle);
 
 const fixFloorLabels = () => {

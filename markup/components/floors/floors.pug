@@ -3,12 +3,18 @@ mixin floors(floors)
     ul.floors__list
       include ../room/room.pug
       each floor in floors
-        li.floors__item.floor.diagram-grid
-          .floor__heading.full-width-row
-            .floor__label= floor.floorLabel
-          - for (let i = 0; i < floor.rooms.length; i += 1)
-            +room(floor.rooms[i], i + 2)
-          //- each room in floor.rooms
-
+        //- li.floors__item.floor.diagram-grid
+        li.floors__item.floor
+          //- .floor__heading.full-width-row
+          .floor__heading-container.diagram-grid
+            .floor__heading.full-width-row
+              .floor__label= floor.floorLabel
+          ul.floor__rooms-list
+            - for (let i = 0; i < floor.rooms.length; i += 1)
+              +room(floor.rooms[i], i + 2)
+            //- each room in floor.rooms
+    .floors__footer.diagram-grid
+      .floors__footer-left
+      .floors__footer-right
 
 
