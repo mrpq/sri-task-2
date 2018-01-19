@@ -1,0 +1,14 @@
+mixin floors(floors)
+  .diagram__floors.floors
+    ul.floors__list
+      include ../room/room.pug
+      each floor in floors
+        li.floors__item.floor.diagram-grid
+          .floor__heading.full-width-row
+            .floor__label= floor.floorLabel
+          - for (let i = 0; i < floor.rooms.length; i += 1)
+            +room(floor.rooms[i], i + 2)
+          //- each room in floor.rooms
+
+
+

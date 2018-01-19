@@ -11,46 +11,50 @@ mixin example(data)
           span.calednar-slider__day Сегодня
         .calendar-slider__arrow
           != pugHelpers.Icon.call(locals, {iconName: 'arrow', className: "calendar-slider__icon-right"}) 
-  .timeline
-    .timeline__hours
-      .hours
-        +hourLabel("8:00")
-        - for (let i = 9; i <= 23; i += 1)
-          +hourLabel(i)
 
-    .timeline__floors
-      .floors
-        ul.floors__list
-          li.floors__item
-            .floor
-              //- span.floor__label#floor-label-1 7 этаж
-              .floor__heading
-              .floor__rooms.rooms
-                ul.rooms__list
-                  li.rooms__item.room
-                    .room__meta
-                      .room__meta-wrapper
-                        p
-                          span.room__name Ржавый Фред<br />
-                          span.room__capacity 3-6 человек
-                    .room__timeline
-                      ul.room-timeline__list
-                        li.room-timeline__item.timeline__item
-                          +meeting("7:10", "9:00", 'timeline__item--busy')
-                          +meeting("9:01", "10:00")
-                          +meeting("10:01", "11:00", 'timeline__item--busy')
-                          //- +meeting("11:01", "12:56", 'timeline__item--busy')
-                          //- +meeting("12:57", "18:24")
-                          //- +meeting("18:24", "19:00", 'timeline__item--busy')
-          li.floors__item
-            .floor
-              //- span.floor__label#floor-label-1 7 этаж
-              .floor__heading
-              .floor__rooms.rooms
+  include ./diagram.pug
+  +diagram
 
-    .hour-bars
-      - for (let j = 9; j <= 24; j += 1)
-       .hour-bar
+  //- .timeline
+  //-   .timeline__hours
+  //-     .hours
+  //-       +hourLabel("8:00")
+  //-       - for (let i = 9; i <= 23; i += 1)
+  //-         +hourLabel(i)
+
+  //-   .timeline__floors
+  //-     .floors
+  //-       ul.floors__list
+  //-         li.floors__item
+  //-           .floor
+  //-             //- span.floor__label#floor-label-1 7 этаж
+  //-             .floor__heading
+  //-             .floor__rooms.rooms
+  //-               ul.rooms__list
+  //-                 li.rooms__item.room
+  //-                   .room__meta
+  //-                     .room__meta-wrapper
+  //-                       p
+  //-                         span.room__name Ржавый Фред<br />
+  //-                         span.room__capacity 3-6 человек
+  //-                   .room__timeline
+  //-                     ul.room-timeline__list
+  //-                       li.room-timeline__item.timeline__item
+  //-                         +meeting("7:10", "9:00", 'timeline__item--busy')
+  //-                         +meeting("9:01", "10:00")
+  //-                         +meeting("10:01", "11:00", 'timeline__item--busy')
+  //-                         //- +meeting("11:01", "12:56", 'timeline__item--busy')
+  //-                         //- +meeting("12:57", "18:24")
+  //-                         //- +meeting("18:24", "19:00", 'timeline__item--busy')
+  //-         li.floors__item
+  //-           .floor
+  //-             //- span.floor__label#floor-label-1 7 этаж
+  //-             .floor__heading
+  //-             .floor__rooms.rooms
+
+  //-   .hour-bars
+  //-     - for (let j = 9; j <= 24; j += 1)
+  //-      .hour-bar
 
 
 mixin hourLabel(hour) 

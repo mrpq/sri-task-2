@@ -1,0 +1,31 @@
+mixin diagram()
+  .diagram
+    .diagram__curr-time.diagram-grid
+      .diagram__curr-time-label(style= "-ms-grid-column: 63; grid-column: 63/64;") 9:00
+    .diagram__hours.hours.diagram-grid
+      //- .hours__filler-start
+      //- .hours__filler-start1
+      - for (let i = 0; i <= 15; i += 1)
+        +hour(i)
+      .hours__filler-end
+    include ../floors/floors.pug
+    +floors(floors)
+
+
+
+mixin hour(i)
+  -
+    const offset = 3;
+    const msColumnStart = i * 60 + offset;
+    const columnStart = i * 60 + offset;
+    const style = `-ms-grid-column: ${columnStart}; grid-column: ${columnStart}/${columnStart + 1}`;
+    const suffix = i == 0 ? ":00" : "";
+    const text = i + 8 + suffix
+  .hours__label(style= style)
+    span #{text}
+    .hours__bar
+
+
+
+  
+

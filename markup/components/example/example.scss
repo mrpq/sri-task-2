@@ -49,122 +49,28 @@
   line-height: 1.2;
 }
 /////////////////////////////
-.timeline {
-  overflow: auto;
-  width: 100vw;
-  // overflow: auto;
-  position: relative;
-  white-space: nowrap;
-  padding-bottom: 14px;
-}
-.timeline__hours {
-  border-bottom: 1px solid rgba(19, 100, 205, 0.1);
-}
-.hours {
-  font-size: 0;
-}
-.hours__hour-label {
-  width: 49px;
-  display: inline-block;
-  text-align: center;
+// .timeline {
+//   overflow: auto;
+//   width: 100vw;
+//   // overflow: auto;
+//   position: relative;
+//   white-space: nowrap;
+//   padding-bottom: 14px;
+// }
+// .timeline__hours {
+//   border-bottom: 1px solid rgba(19, 100, 205, 0.1);
+// }
 
-  // unsure
-  // position: relative;
-}
-.hours__hour-label > span {
-  display: inline-block;
-  text-align: center;
-  font-size: 11px;
-  line-height: 1.181818;
-  letter-spacing: 0.4px;
-  color: #858e98;
-  font-weight: bold;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.hours__hour-label:first-of-type {
-  margin-left: 210px;
-}
-.hours__hour-label:nth-of-type(n + 2) {
-  margin-left: 17px;
-}
-////
-/// floors
-.floor__heading {
-  background-color: #f7f8f9;
-  height: 37px;
-}
-.floor__label {
-  font-size: 11px;
-  line-height: 1.181818;
-  letter-spacing: 0.4px;
-  color: #858e98;
-  font-weight: bold;
-  text-transform: uppercase;
-}
+// .hours__hour-label > span {
+//   display: inline-block;
+//   text-align: center;
+//   font-size: 11px;
+//   line-height: 1.181818;
+//   letter-spacing: 0.4px;
+//   color: #858e98;
+//   font-weight: bold;
+//   padding-top: 10px;
+//   padding-bottom: 10px;
+// }
 
 /// room
-.room {
-  // display: flex;
-  // font-size: 0;
-}
-.room__meta {
-  display: inline-block;
-  width: 181px;
-  height: 58px;
-  // box-shadow: 1px 0 0 0 #e9ecef;
-  border-right: 1px solid #e9ecef;
-}
-.room__meta-wrapper {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  margin-left: 16px;
-}
-.room__name {
-  font-size: 15px;
-  line-height: 1.133333;
-}
-.room__capacity {
-  font-size: 13px;
-  line-height: 1.30769;
-}
-
-.room__timeline {
-  display: inline-block;
-  font-size: 0;
-}
-.room-timeline__list {
-  height: 100%;
-  // font-size: 0;
-  white-space: nowrap;
-}
-.timeline__item {
-  display: inline-block;
-}
-.timeline__item--busy {
-  background-color: #d5dfe9;
-}
-
-////
-.hour-bars {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 10;
-  top: 33px;
-  white-space: nowrap;
-  font-size: 0;
-}
-.hour-bar {
-  display: inline-block;
-  background-color: rgba(19, 100, 205, 0.1);
-  width: 1px;
-  height: 100%;
-  margin-left: 234px;
-  // margin-left: 65px;
-}
-.hour-bar:nth-of-type(n + 2) {
-  margin-left: 65px;
-}

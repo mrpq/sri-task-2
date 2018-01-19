@@ -1,0 +1,14 @@
+mixin floors()
+  .diagram__floors.floors
+    ul.floors__list
+      li.floors__item.floor.diagram-grid
+        +room()
+
+
+mixin room()
+  .floor__heading.full-width-row
+    .floor__label floor label
+  .floor__room.room.diagram-grid.full-width-row
+    .room__meta
+      <p>Room name<br />Capacity</p>
+    .room__meeting 

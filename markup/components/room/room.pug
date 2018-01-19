@@ -1,0 +1,74 @@
+-
+    class MeetingGenerator {
+        constructor() {
+            this.init()
+            this.startTime = 0;
+            this.currentTime = this.startTime;
+            this.endTime = 900;
+        }
+        init() {
+            this.startTime = 0;
+            this.currentTime = this.startTime;
+            this.endTime = 900;
+        }
+        randomRange(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        makeMeeting() {
+            const res = {}
+            if (this.isPrevBusy === false) {
+              res.busy = true;
+            } else {
+              res.busy = Math.random() < 0.7 ? true : false
+            }
+            const timeToEnd = this.endTime - this.currentTime;
+            if (timeToEnd <= 4 * 60) {
+                (res.duration = timeToEnd),
+                (res.startTime = this.currentTime),
+                (res.endTime = this.endTime);
+                this.currentTime = this.endTime;
+                return res;
+            } else {
+                const duration = this.randomRange(60, 240);
+                res.duration = duration;
+                (res.startTime = this.currentTime),
+                (res.endTime = this.currentTime + duration);
+                this.currentTime += duration;
+                return res;
+            }
+        }
+        generateMeetings() {
+            const meetings = [];
+            while (this.currentTime < this.endTime) {
+                const meeting = this.makeMeeting()
+                this.isPrevBusy = meeting.busy;
+                meetings.push(meeting);
+            }
+            this.init();
+            console.log(meetings)
+            return meetings;
+        }
+    }
+
+    const meetingGenerator = new MeetingGenerator();
+mixin room(room, i)
+  .floor__room.room.diagram-grid.full-width-row(style= `-ms-grid-row: ${i};`)
+    .room__meta
+      .room__tooltip #{room.name}
+      .room__meta-content <span class="room__meta-name">#{room.name}</span><br /><span class="room__meta-capacity">#{room.capacity}</span>
+    - const meetings = meetingGenerator.generateMeetings()
+      each m in meetings
+        +meeting(m)
+          //- .room__meeting #{room.meetings}
+
+mixin meeting(data)
+    -
+      const offset = 3
+      const style = `-ms-grid-column: ${data.startTime + offset}; -ms-grid-column-span: ${data.duration}; grid-column: ${data.startTime + offset}/${data.endTime + offset}`;
+      const className = data.busy ? "room__meeting--busy" : ""
+      const tmp = new Date(2017, 01, 01, 8, 0, 0)
+      const startDate = new Date(tmp.getTime() + data.startTime * 60000)
+      const endDate = new Date(startDate.getTime() + data.duration * 60000)
+
+    .room__meeting(style= style class= className)
+    //- .room__meeting(style= style class= className) #{startDate.getHours()}:#{startDate.getMinutes()} - #{endDate.getHours()}:#{endDate.getMinutes()} <br/> #{data.duration}
