@@ -1,0 +1,28 @@
+mixin gui(data)
+  .meeting-output
+    .meeting-output__hours
+      span.meeting-output__start 16:00
+      span —
+      span.meeting-output__end 16:30
+    .meeting-output__room &nbsp;&nbsp;Готем 
+    .meeting-output__floor &nbsp;&middot; 6 этаж 
+    .meeting-output__delete
+      != pugHelpers.Icon.call(locals, {iconName: 'close-white', className: "meeting-output__delete-icon"}) 
+  button.btn.btn-cancel Отмена
+  .clearable-input
+    input(type="text" placeholder="sdfsdf")
+    .clearable-input__clear.clearable-input__clear--visible
+      != pugHelpers.Icon.call(locals, {iconName: 'close', className: "clearable-input__clear-icon"}) 
+    ul.dropdown-list
+      li.dropdown-list__item.dropdown-item
+        .dropdown-item__ava
+        .dropdown-item__name Лекс Лютер
+        .dropdown-item__floor &nbsp;&middot; 7 этаж
+      li.dropdown-list__item.dropdown-item.dropdown-item--highlight
+        .dropdown-item__ava 
+        .dropdown-item__name Томас Андерсон
+        .dropdown-item__floor &nbsp;&middot; 6 этаж
+      li.dropdown-list__item.dropdown-item
+        .dropdown-item__ava
+        .dropdown-item__name Дарт вейдер
+        .dropdown-item__floor &nbsp;&middot; 1 этаж
