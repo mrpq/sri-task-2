@@ -13,7 +13,9 @@ mixin header(data)
           span.calednar-slider__date 14 дек &middot; 
           span.calednar-slider__day Сегодня
         .calendar-slider__arrow
-          != pugHelpers.Icon.call(locals, {iconName: 'arrow', className: "calendar-slider__icon-right"}) 
+          != pugHelpers.Icon.call(locals, {iconName: 'arrow', className: "calendar-slider__icon-right"})
 
-  include ../diagram/diagram.pug
-  +diagram
+mixin shortHeader()
+  heading.main-heading
+    .main-heading__logo
+      != pugHelpers.Icon.call(locals, {iconName: 'logo', className: "main-heading__logo-icon"}) 

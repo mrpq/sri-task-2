@@ -6,7 +6,6 @@ html(class="no-js", lang="ru")
     include ../components/header/header.pug
     include ../components/diagram/diagram.pug
     include ../components/footer/footer.pug
-    include ../components/gui/gui.pug
 
     head
         +head(head.defaults)
@@ -18,6 +17,7 @@ html(class="no-js", lang="ru")
             //- Include your components here
             //- +example()
             +header()
+            +diagram()
 
             .page__buffer
 

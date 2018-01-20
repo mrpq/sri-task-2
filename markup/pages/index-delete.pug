@@ -3,8 +3,9 @@ html(class="no-js", lang="ru")
 
     include ../components/head/head.pug
     //- include ../components/example/example.pug
-    include ../components/forms/formEdit.pug
     include ../components/header/header.pug
+    include ../components/diagram/diagram.pug
+    include ../components/modals/modals.pug
     include ../components/footer/footer.pug
 
     head
@@ -16,11 +17,9 @@ html(class="no-js", lang="ru")
 
             //- Include your components here
             //- +example()
-            //- +formNew()
-            //- +formEdit()
-            //- +modalCreate()
-            +shortHeader()
-            +formEdit()
+            +header()
+            +diagram()
+            +modalDelete()
 
             .page__buffer
 

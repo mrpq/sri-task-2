@@ -1,55 +1,57 @@
 include ../gui/gui.pug
 mixin formEdit(data)
-  .form-container
-    .form-container__row-1
-      .fields-wrapper
-        header.form-header
-          h1.form-header__heading Редактирование встречи
-          .form-header__close
-            != pugHelpers.Icon.call(locals, {iconName: 'close', className: "form-header__close-icon"}) 
-      form
-        .fields-wrapper
-          .form__row.row-1
-            .form__column
-              .form__field
-                +clearableInput("topic", {placeholder: "Тема встречи"}, "Тема")
-            .form__column
-              .form__field
-                .form-column-left
-                  .column-left__left
-                    +calendarInput("date", {}, "Дата и время")
-                  .column-left__right
-                    .form__date-range
-                      +basicInput("startTime", {value: "16:00"})
-                      .form_date-range-dash —
-                      +basicInput("endTime", {value: "16:30"})
-        .delimiter
-
-        .form__row.row-2
-          .form__column
+  form
+    .form-container
+      .form-container__row-1
+        .form-centering-container
+          .fields-wrapper
+            header.form-header
+              h1.form-header__heading Редактирование встречи
+              .form-header__close
+                != pugHelpers.Icon.call(locals, {iconName: 'close', className: "form-header__close-icon"}) 
+          
             .fields-wrapper
-              .form__field
-                +dropdownField("attendees", {placeholder: "Например, Виктор Сергеевич"}, "Участники")
-              .participants
-                ul.participants__list
-                  li.participants__item
-                    +participant("Лекс Лютер") 
-                  li.participants__item
-                    +participant("Кларк Кент") 
+              .form__row.row-1
+                .form__column
+                  .form__field
+                    +clearableInput("topic", {placeholder: "Тема встречи"}, "Тема")
+                .form__column
+                  .form__field
+                    .form-column-left
+                      .column-left__left
+                        +calendarInput("date", {}, "Дата и время")
+                      .column-left__right
+                        .form__date-range
+                          +basicInput("startTime", {value: "16:00"})
+                          .form_date-range-dash —
+                          +basicInput("endTime", {value: "16:30"})
             .delimiter
-          .form__column
-            .fields-wrapper
-              .form__field 
-                +meetingOutput("meeting", {}, "Ваша переговорка", true)
-      .delimiter
-      .delete-meeting
-        button.delete-meeting__button Удалить встречу
-      .delimiter
-    .form-container__row-1      
-      .form__controls
-        button.btn.btn-cancel Отмена
-        button.btn.btn-cancel.btn--desktop-only Удалить встречу
-        button.btn.btn-cancel Сохранить
+
+            .form__row.row-2
+              .form__column
+                .fields-wrapper
+                  .form__field
+                    +dropdownField("attendees", {placeholder: "Например, Виктор Сергеевич"}, "Участники")
+                  .participants
+                    ul.participants__list
+                      li.participants__item
+                        +participant("Лекс Лютер") 
+                      li.participants__item
+                        +participant("Кларк Кент") 
+                .delimiter
+              .form__column
+                .fields-wrapper
+                  .form__field 
+                    +meetingOutput("meeting", {}, "Ваша переговорка", true)
+          .delimiter
+          .delete-meeting
+            button.delete-meeting__button Удалить встречу
+          .delimiter
+      .form-container__row-2
+        .form__controls
+          button.btn.btn--cancel Отмена
+          button.btn.btn--cancel.btn--desktop-only Удалить встречу
+          button.btn.btn--cancel Сохранить
 
 
     

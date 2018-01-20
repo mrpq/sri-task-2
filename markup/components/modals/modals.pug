@@ -1,2 +1,31 @@
 mixin modals(data)
     .modals
+
+mixin modalCreate()
+  .modal-container
+    .modal
+      .modial__icon-container
+        != pugHelpers.Icon.call(locals, {iconName: 'emoji2', className: "modal__icon"}) 
+      .modal__info
+        strong.modal__title Встеча создана!
+        .modal__details
+          .modal__date-time
+            span.modal__date 14 декабря,
+            span.modal__time 15:00—17:00
+          .modal__room
+            span.modal__room-name Готем &middot; 
+            span.modal__floor 4этаж
+      .modal__cta
+        button.btn Хорошо
+
+
+mixin modalDelete()
+  .modal-container
+    .modal
+      .modial__icon-container
+        != pugHelpers.Icon.call(locals, {iconName: 'emoji1', className: "modal__icon"}) 
+      .modal__info
+        strong.modal__title Встреча будет удалена безвозвратно
+      .modal__cta
+        button.btn.btn--cancel Отмена
+        button.btn.btn--cancel Удалить

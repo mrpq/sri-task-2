@@ -1,13 +1,15 @@
 include ../gui/gui.pug
 mixin formNew(data)
-  .form-container
+  form
+    .form-container
     .form-container__row-1
-      .fields-wrapper
-        header.form-header
-          h1.form-header__heading Новая встреча
-          .form-header__close
-            != pugHelpers.Icon.call(locals, {iconName: 'close', className: "form-header__close-icon"}) 
-      form
+      .form-centering-container
+        .fields-wrapper
+          header.form-header
+            h1.form-header__heading Новая встреча
+            .form-header__close
+              != pugHelpers.Icon.call(locals, {iconName: 'close', className: "form-header__close-icon"}) 
+      
         .fields-wrapper
           .form__row.row-1
             .form__column
@@ -33,7 +35,7 @@ mixin formNew(data)
               .participants
                 ul.participants__list
                   li.participants__item
-                    +participant("Лекс Лютерhhhhhhhhhhhhhhhhhhhhh") 
+                    +participant("Ургюмый мужик") 
                   li.participants__item
                     +participant("Кларк Кент") 
                   li.participants__item

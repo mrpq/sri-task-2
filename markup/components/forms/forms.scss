@@ -1,4 +1,6 @@
 .form-container {
+}
+.form-centering-container {
   @media (min-width: 960px) {
     max-width: 872px;
     // max-height: 648px;
@@ -14,6 +16,9 @@
 }
 .form-container__row-1 {
   flex: 1 1 auto;
+  border: 1px solid #e9ecef;
+  border-left: 0;
+  border-right: 0;
 }
 .form-header {
   margin-top: 25px;

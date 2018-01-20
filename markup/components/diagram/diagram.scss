@@ -8,15 +8,16 @@
   // overflow: hidden;
 }
 .diagram {
-  overflow: hidden;
-  overflow-x: auto;
+  // overflow: hidden;
   // overflow-x: visible;
+  overflow-x: auto;
   width: 100%;
   position: relative;
   white-space: nowrap;
   padding-bottom: 14px;
+
   @media (min-width: 960px) {
-    overflow-x: hidden;
+    overflow-x: visible;
   }
   // height: auto;
 }
