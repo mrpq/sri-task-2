@@ -59,12 +59,14 @@ mixin room(room, i)
     .room__meta(class = roomMetaModifier)
       .room__tooltip(class= roomTooltipModifier) #{room.name}
       .room__meta-content <span class="room__meta-name">#{room.name}</span><br /><span class="room__meta-capacity">#{room.capacity}</span>
-    .room-diagram-filler
+    .room-diagram-filler.room-diagram-filler--start
+      .room-diagram-filler__inner
     - const meetings = meetingGenerator.generateMeetings()
     each m in meetings
       +meeting(m)
           //- .room__meeting #{room.meetings}
-    .room-diagram-filler
+    .room-diagram-filler.room-diagram-filler--end
+      .room-diagram-filler__inner
 - let jj = 0;
 mixin meeting(data)
     -
@@ -76,6 +78,10 @@ mixin meeting(data)
       const endDate = new Date(startDate.getTime() + data.duration * 60000)
 
     .room__meeting(style= style class= className)
+      if !data.busy
+        .room__meeting-inside-left
+          button.room__meeting-create-button
+        //- .room__meeting-inside-right
       if data.busy
         .meeting-tooltip-triangle.js-meeting-tooltip-triangle
         .meeting-tooltip.js-meeting-tooltip

@@ -1,19 +1,26 @@
+.diagram-wrapper {
+  // display: flex;
+  // min-width: 100%;
+  // margin-left: auto;
+  // margin-right: auto;
+  // overflow: hidden;
+  // width: 1237px;
+  // overflow: hidden;
+}
 .diagram {
-  overflow-y: auto;
+  overflow: hidden;
+  overflow-x: auto;
   // overflow-x: visible;
-  width: 100vw;
+  width: 100%;
   position: relative;
   white-space: nowrap;
   padding-bottom: 14px;
-  height: auto;
+  @media (min-width: 960px) {
+    overflow-x: hidden;
+  }
+  // height: auto;
 }
 
-// .diagram-grid {
-//   display: -ms-grid;
-//   display: grid;
-//   width: 1237px;
-//   grid-template-columns: 180px 54px repeat(901, 1fr) 13px;
-// }
 .diagram__curr-time {
   position: relative;
   z-index: 15;
@@ -30,11 +37,14 @@
   // z-index: 111;
   top: 7px;
   transform: translateX(-50%);
+  @media (min-width: 960px) {
+    top: 14px;
+  }
 }
 .diagram__curr-time-label::after {
   content: "";
   width: 1px;
-  height: 100px;
+  // height: 100px;
   background-color: #1681fb;
   position: absolute;
   left: 50%;
@@ -44,6 +54,10 @@
 .hours {
   height: 32px;
   border-bottom: 1px solid rgba(19, 100, 205, 0.1);
+  @media (min-width: 960px) {
+    border-top: 1px solid rgba(19, 100, 205, 0.1);
+    height: 46px;
+  }
 }
 
 .hours__filler-start {
@@ -59,6 +73,9 @@
   position: relative;
   padding-top: 10px;
   z-index: 10;
+  @media (min-width: 960px) {
+    padding-top: 17px;
+  }
   // padding-bottom: 10px;
 }
 
@@ -68,7 +85,7 @@
   line-height: 1.181818;
   letter-spacing: 0.4px;
   color: #858e98;
-  font-weight: bold;
+  font-weight: 700;
   // top: 50%;
   // padding-top: 20px;
   // padding-bottom: 20px;
@@ -81,6 +98,9 @@
   width: 1px;
   height: 100px;
   background-color: rgba(19, 100, 205, 0.1);
+  @media (min-width: 960px) {
+    top: 46px;
+  }
 }
 //
 .floor {

@@ -9,5 +9,9 @@
 @media (min-width: 960px) {
   .diagram-grid {
     width: 100%;
+
+    /* width: auto; */
+    -ms-grid-columns: 245px 31px (1fr)[900] 13px;
+    grid-template-columns: 245px 31px repeat(900, 1fr) 13px;
   }
 }

@@ -1,1 +1,106 @@
-
+.main-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // border-bottom: 1px solid black;
+  padding-left: 20px;
+  height: 48px;
+  // padding-right: px;
+  @media (min-width: 960px) {
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 71px;
+  }
+}
+.main-heading__logo {
+  // margin-left: 16px;
+  // margin-top: 15px;
+  // margin-bottom: 11px;
+  // line-height: 0;
+}
+.main-heading__logo-icon {
+  width: 150px;
+  height: 21px;
+  @media (min-width: 960px) {
+    width: 174px;
+    height: 24px;
+  }
+}
+.main-heading__create-meeting {
+  display: none;
+  @media (min-width: 960px) {
+    display: block;
+  }
+}
+/////////////////////////////
+.calendar {
+  position: relative;
+}
+.calendar-slider {
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 500;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border: 1px solid rgba(19, 100, 205, 0.1);
+  border-left: 0;
+  border-right: 0;
+  @media (min-width: 960px) {
+    position: absolute;
+    top: 10px;
+    z-index: 100;
+    width: 245px;
+    font-size: 15px;
+    line-height: 1.2;
+    padding: 0;
+    border: 0;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+.calendar-slider__arrow {
+  position: relative;
+  background-color: #e9ecef;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  @media (min-width: 960px) {
+    width: 24px;
+    height: 24px;
+  }
+}
+.calendar-slider__icon-left {
+  position: absolute;
+  transform: translate(-57%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  @media (min-width: 960px) {
+    width: 10px;
+    height: 10px;
+  }
+}
+.calendar-slider__icon-right {
+  position: absolute;
+  transform: translate(-43%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  @media (min-width: 960px) {
+    width: 10px;
+    height: 10px;
+  }
+}
+.calenad-slider__date-container {
+  font-size: 15px;
+  line-height: 1.2;
+}

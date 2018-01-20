@@ -1,5 +1,34 @@
 mixin gui(data)
-  .meeting-output
+  p
+
+mixin fieldLabel(label, id)
+  label.formfield-label(for= id) #{label}
+
+mixin basicInput(id, data, label)
+  if label
+    +fieldLabel(label, id)
+  input(type="text" placeholder= data.placeholder value= data.value)
+
+mixin clearableInput(id, data, label)
+  if label
+    +fieldLabel(label, id)
+  .clearable-input
+    input(type="text" placeholder= data.placeholder id=data.id)
+    .clearable-input__clear.clearable-input__clear--visible
+      != pugHelpers.Icon.call(locals, {iconName: 'close', className: "clearable-input__clear-icon"}) 
+
+mixin calendarInput(id, data, label)
+  if label
+    +fieldLabel(label, id)
+  .calendar-input
+    input(type="text" placeholder= data.placeholder value="14 декабря, 2017" disabled)
+
+mixin meetingOutput(id, data, label, selected)
+  if label
+    +fieldLabel(label, id)
+  - const start = data.start || "16:00"
+  - const modifier = selected ? "meeting-output--selected" : ""
+  .meeting-output(class= modifier)
     .meeting-output__hours
       span.meeting-output__start 16:00
       span —
@@ -8,11 +37,17 @@ mixin gui(data)
     .meeting-output__floor &nbsp;&middot; 6 этаж 
     .meeting-output__delete
       != pugHelpers.Icon.call(locals, {iconName: 'close-white', className: "meeting-output__delete-icon"}) 
-  button.btn.btn-cancel Отмена
-  .clearable-input
-    input(type="text" placeholder="sdfsdf")
-    .clearable-input__clear.clearable-input__clear--visible
-      != pugHelpers.Icon.call(locals, {iconName: 'close', className: "clearable-input__clear-icon"}) 
+  
+
+mixin cancelButton(text)
+  - const buttonText = text || "Отмена"
+  button.btn.btn-cancel #{buttonText}
+
+mixin dropdownField(id, data, label)
+  if label
+    +fieldLabel(label, id)
+  .dropdown-field
+    input(type="text" placeholder= data.placeholder)
     ul.dropdown-list
       li.dropdown-list__item.dropdown-item
         .dropdown-item__ava
@@ -26,3 +61,10 @@ mixin gui(data)
         .dropdown-item__ava
         .dropdown-item__name Дарт вейдер
         .dropdown-item__floor &nbsp;&middot; 1 этаж
+
+mixin participant(name)
+  .participant
+    .participant__ava
+    .participant__name #{name}
+    .participant__delete
+      != pugHelpers.Icon.call(locals, {iconName: 'close', className: "participant__delete-icon"}) 

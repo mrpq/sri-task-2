@@ -1,13 +1,16 @@
 mixin header(data)
-  .logo
-    != pugHelpers.Icon.call(locals, {iconName: 'logo', className: "logo__icon"}) 
+  heading.main-heading
+    .main-heading__logo
+      != pugHelpers.Icon.call(locals, {iconName: 'logo', className: "main-heading__logo-icon"}) 
+    .main-heading__create-meeting
+      button.btn Создать встречу
   .calendar
     .calendar__slider
       .calendar-slider
         .calendar-slider__arrow
           != pugHelpers.Icon.call(locals, {iconName: 'arrow2', className: "calendar-slider__icon-left"}) 
         .calendar-slider__date-container
-          span.calednar-slider__date 14 декабря 
+          span.calednar-slider__date 14 дек &middot; 
           span.calednar-slider__day Сегодня
         .calendar-slider__arrow
           != pugHelpers.Icon.call(locals, {iconName: 'arrow', className: "calendar-slider__icon-right"}) 
