@@ -44,6 +44,7 @@ mixin formNew(data)
           .form__column
             .fields-wrapper
               .form__field 
+                +fieldLabel("Выберите переговорку", "id")
                 +meetingOutput("meeting", {}, "Ваша переговорка")
                 +meetingOutput("meeting", {}, "Поле непаханное")
                 +meetingOutput("meeting", {}, "Темная башня")

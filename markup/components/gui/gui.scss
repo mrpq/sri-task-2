@@ -204,6 +204,7 @@ input:focus ~ .clearable-input__clear--visible {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 8px;
 }
 .meeting-output--selected {
   color: #fff;

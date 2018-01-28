@@ -24,8 +24,8 @@ mixin calendarInput(id, data, label)
     input(type="text" placeholder= data.placeholder value="14 декабря, 2017" disabled)
 
 mixin meetingOutput(id, data, label, selected)
-  if label
-    +fieldLabel(label, id)
+  //- if label
+  //-   +fieldLabel(label, id)
   - const start = data.start || "16:00"
   - const modifier = selected ? "meeting-output--selected" : ""
   .meeting-output(class= modifier)
