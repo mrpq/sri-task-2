@@ -1,3 +1,17 @@
+[Главная]()
+[Модалка встеча создана]()
+[Модалка удаление]()
+[Страница создания]()
+[Страница удаления]()
+
+Для реализации диаграммы я выбрал CSS Grid, потому что гриды обещали предсказуемое заполнение горизонтальных полос. Были сомнения, что удастся заставить это работать в IE, но разобравшись, я выяснил, что возможности гридов, необходимые для реализации конкретно этой задачи, поддерживаются IE11+. Чего достаточно для выполнения требований задания.
+
+Для верстки использован сборщик [TARS](https://github.com/tars/tars). Я выбрал данный инструмент после того как поверстал без использования инструментов, затем один проект с помощью [PatternLab](http://patternlab.io/) от авторов подхода Atomic Dsign
+.
+Во время верстки первых проектов очень скоро я столкнулся с тем, что html страницы сильно раздуваются, а вместе с ними таблицы стилей. Работать с этим становится тяжело. Появилось понимание необходимости разбивать страницы на небольшие переиспользуемые компоненты, хранящиеся по отдельности, вместе со своими стилями. Понятно, что все это нужно как-то собирать. Вспомнил о существовании шаблонизаторов, и решил, что наверняка на базе их использования эту проблему уже кто-нибудь решил, и все красиво автоматизировал. Первое на что наткнулся, был PatternLab. Недолго думая заиспользовал, и испытал много боли. Тулза очень медленно работает, порой без причин перестает подхватывать изменения, в то время как я сижу и ломаю голову почему стили не применяются.
+
+Дальнейший поиск средства сборки выявил 2 кандидата CSSSR и TARS. Посмотрев выступление автора последнего, я сделал выбор. О чем не жалею - все очень быстро работает. Очень много возможностей из коробки. С помощью шаблонизатора Pug получается лаконичный и переиспользуемый код с бонусами в виде возможности выполнения js прямо в шаблонах.
+
 <p align="right">
 English description | <a href="README_RU.md">Описание на русском</a>
 </p>
@@ -8,7 +22,7 @@ English description | <a href="README_RU.md">Описание на русско�
 
 TARS is a builder for modern frontend of any complexity, which is based on [Gulp.js](http://gulpjs.com/). It facilitates and accelerates process of web-development. TARS will be suitable for teams and individual developers. It solves the most routine cases associated with web-development and brings you more pleasure from work.
 
-TARS is a framework for gulp, including a set of gulp-tasks. It allows for easy expansion (creating new tasks) and customization (modification of existing tasks),  provides comfortable architecture for tasks and watchers storage in the project. 
+TARS is a framework for gulp, including a set of gulp-tasks. It allows for easy expansion (creating new tasks) and customization (modification of existing tasks), provides comfortable architecture for tasks and watchers storage in the project.
 
 To bypass dependencies installation for every TARS project, [TARS-CLI](https://github.com/tars/tars-cli) was created. As such, TARS is not a npm-package by itself. This decision was made so that everyone could comfortably customize the builder for themselves. TARS-CLI is just a simple builder interface, which includes all dependencies for TARS.
 
@@ -53,11 +67,10 @@ It is important! All examples in documentation use the default settings.
 * [Upgrade guide](/docs/en/update-guide.md)
 * [FAQ](/docs/en/faq.md)
 
-
 ## Installation
 
 **Attention, [TARS-CLI](https://github.com/tars/tars-cli) is the preferred
- way to work with TARS. It is faster and more comfortable to work with TARS-CLI. In case of using TARS with TARS-CLI all installation steps are not necessary!**
+way to work with TARS. It is faster and more comfortable to work with TARS-CLI. In case of using TARS with TARS-CLI all installation steps are not necessary!**
 
 You need to [install `Node.js`](http://nodejs.org/) with version equal to 4.x.x and higher. If you use Node.js version 5.x.x, please, make sure, that you use npm version 3.x.x and higher. Otherwise update npm by using command:
 
@@ -84,7 +97,7 @@ npm install -g gulp
 npm install
 ```
 
-If not all of the dependencies have been installed, the last operation must be repeated. 
+If not all of the dependencies have been installed, the last operation must be repeated.
 
 After installing of all dependencies you need to open tars-config (detailed description of the options are [here](/docs/en/options.md)) and set up the project for yourself. In that config file, you can select the templater, css-preprocessor, using the notifications, folder names for different static and etc. After setting up the project, execute the following command:
 
@@ -92,17 +105,16 @@ After installing of all dependencies you need to open tars-config (detailed desc
 gulp init
 ```
 
-**Attention, [TARS-CLI](https://github.com/tars/tars-cli) is the preferred 
+**Attention, [TARS-CLI](https://github.com/tars/tars-cli) is the preferred
 way to work with TARS. It is faster and more comfortable to work with TARS-CLI. [Init command is available in TARS-CLI too](https://github.com/tars/tars-cli/blob/master/docs/en/commands.md#tars-init).**
 
-This command will create the basic file structure, download tasks for selected templater and css-preprocessor. 
+This command will create the basic file structure, download tasks for selected templater and css-preprocessor.
 Everything is ready, get to work! :)
-
 
 ## Basic commands
 
 **Attention, [TARS-CLI](https://github.com/tars/tars-cli) is the preferred
- way to work with TARS. It is faster and more comfortable to work with TARS-CLI. All commands are available and [described in TARS-CLI](https://github.com/tars/tars-cli/blob/master/docs/en/commands.md), so use only TARS-CLI for working with your project. TARS used Gulp to start tasks, when CLI was not created.**
+way to work with TARS. It is faster and more comfortable to work with TARS-CLI. All commands are available and [described in TARS-CLI](https://github.com/tars/tars-cli/blob/master/docs/en/commands.md), so use only TARS-CLI for working with your project. TARS used Gulp to start tasks, when CLI was not created.**
 
 `gulp init` — initializes project with the specified settings in the tars-config. Creates a file structure.
 
@@ -112,9 +124,9 @@ Everything is ready, get to work! :)
 Available parameters:
 
 * `--min` – minimized files are connected to html.
-* `--release` – minimized  files are connected to html whose names have hash. This mode is useful if you are trying to directly deploy ready markup to the server.
+* `--release` – minimized files are connected to html whose names have hash. This mode is useful if you are trying to directly deploy ready markup to the server.
 
-`gulp dev` — initialize of builder in development mode. Dev-version of the project is created  without any minifications. It also launches watchers for project files.
+`gulp dev` — initialize of builder in development mode. Dev-version of the project is created without any minifications. It also launches watchers for project files.
 Available parameters:
 
 * `--lr` – initialize livereload (live page reloads with changes in project files), if it is included in the configuration of the project.
@@ -129,7 +141,6 @@ These parameters are available in any mode of assembly:
 * `--ie8` – to include in the build styles for ie8.
 * `--ie9` – to include in the build styles for ie9.
 * `--ie` – to include in the build styles for ie8 and ie9.
-
 
 ## Documentation
 
@@ -147,7 +158,6 @@ It is important! All examples in documentation use the default settings.
 * [Usage script (scenarios)](/docs/en/scenarios.md)
 * [Upgrade guide](/docs/en/update-guide.md)
 * [FAQ](/docs/en/faq.md)
-
 
 ## Last changes
 
