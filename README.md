@@ -1,17 +1,14 @@
-[Демо](https://tranquil-thicket-93129.herokuapp.com/
-) *может потребоваться время во время первого открвания, так как демка на бесплатном аккаунте heroku. Попробуйте обновить страницу через некоторое время после открытия ссылки
-
 Собранный проект находится в папе `builds/build`
 
-[Главная](https://github.com/mrpq/sri-task-2/blob/master/builds/build/index.html)
+[Главная](https://mrpq.github.io/sri-task-2/builds/build/index.html)
 
-[Модалка встеча создана](https://github.com/mrpq/sri-task-2/blob/master/builds/build/index-create.html)
+[Модалка встеча создана](https://mrpq.github.io/sri-task-2/builds/build/index-create.html)
 
-[Модалка удаление](https://github.com/mrpq/sri-task-2/blob/master/builds/build/index-delete.html)
+[Модалка удаление](https://mrpq.github.io/sri-task-2/builds/build/index-delete.html)
 
-[Страница создания](https://github.com/mrpq/sri-task-2/blob/master/builds/build/create.html)
+[Страница создания](https://mrpq.github.io/sri-task-2/builds/build/create.html)
 
-[Страница удаления](https://github.com/mrpq/sri-task-2/blob/master/builds/build/edit.html)
+[Страница удаления](https://mrpq.github.io/sri-task-2/builds/build/edit.html)
 
 Для реализации диаграммы я выбрал CSS Grid, потому что гриды обещали предсказуемое заполнение горизонтальных полос. Были сомнения, что удастся заставить это работать в IE, но разобравшись, я выяснил, что возможности гридов, необходимые для реализации конкретно этой задачи, поддерживаются IE11+. Чего достаточно для выполнения требований задания.
 
